@@ -1,3 +1,4 @@
+import 'package:carpool/Bindings/loginBinding.dart';
 import 'package:carpool/Bindings/splashBinding.dart';
 
 import 'exportlinks.dart';
@@ -8,7 +9,7 @@ void main() {
     initialBinding: SplashBinding(),
     getPages: [
       GetPage(name: '/', page: () => Splash(), bindings: [SplashBinding()]),
-      GetPage(name: '/Login', page: () => const Login()),
+      GetPage(name: '/Login', page: () => Login(), bindings: [LoginBinding()]),
       GetPage(
           name: '/driverSignup',
           page: () => const driverSignup(),

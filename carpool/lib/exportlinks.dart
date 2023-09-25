@@ -18,3 +18,5 @@ export 'View/DriverPickupScreen.dart';
 export 'View/DriverSignup.dart';
 export 'View/rideSignup.dart';
 export 'package:carpool/CustomWidgets/description.dart';
+export '../config/Sizes.dart';
+export 'package:carpool/CustomWidgets/cTextField.dart';

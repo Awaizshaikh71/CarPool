@@ -9,6 +9,10 @@ class MyFontStyle {
     return GoogleFonts.poppins(color: myColors().blackTitle, fontSize: 30);
   }
 
+  TextStyle getLoginTitleFont() {
+    return GoogleFonts.poppins(color: myColors().blackTitle, fontSize: 30);
+  }
+
   TextStyle getDescriptionFont() {
     return GoogleFonts.poppins(
         color: myColors().blackDescription,

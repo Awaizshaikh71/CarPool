@@ -7,3 +7,12 @@ Widget cTitle({text, context}) {
     style: MyFontStyle(context).getTitleFont(),
   );
 }
+
+Widget LoginTitle({text, context}) {
+  return Center(
+    child: Text(
+      text,
+      style: MyFontStyle(context).getLoginTitleFont(),
+    ),
+  );
+}
