@@ -16,3 +16,12 @@ Widget LoginTitle({text, context}) {
     ),
   );
 }
+
+Widget smallTitle({text, context}) {
+  return Center(
+    child: Text(
+      text,
+      style: MyFontStyle(context).smallTitleFont(),
+    ),
+  );
+}

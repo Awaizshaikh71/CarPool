@@ -5,6 +5,8 @@ class myColors {
   Color bgWhite = Colors.white;
   Color whiteTitle = Colors.white;
   Color blackTitle = Colors.black;
+  Color redTitle = const Color.fromARGB(255, 255, 103, 103);
+
   Color blackDescription = const Color.fromARGB(255, 105, 105, 105);
   Color textfieldFilled = Color.fromARGB(255, 176, 243, 180);
 }

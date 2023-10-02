@@ -20,3 +20,4 @@ export 'View/rideSignup.dart';
 export 'package:carpool/CustomWidgets/description.dart';
 export '../config/Sizes.dart';
 export 'package:carpool/CustomWidgets/cTextField.dart';
+export '../CustomWidgets/cButton.dart';

@@ -5,6 +5,7 @@ import 'exportlinks.dart';
 
 void main() {
   runApp(GetMaterialApp(
+    debugShowCheckedModeBanner: false,
     initialRoute: '/',
     initialBinding: SplashBinding(),
     getPages: [

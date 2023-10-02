@@ -7,16 +7,15 @@ pTextField({context, PlaceholderText, obscure}) {
     init: LoginController(),
     initState: (state) => LoginController,
     builder: (controller) => TextField(
-      obscureText: obscure,
+      obscureText: controller.secureText,
       decoration: InputDecoration(
+          hintText: PlaceholderText,
           suffixIcon: GestureDetector(
             onTap: () {
-              LoginController().makeSecure();
+              controller.makeSecure();
             },
             child: Icon(
-              LoginController().secureText
-                  ? Icons.visibility
-                  : Icons.visibility_off,
+              controller.secureText ? Icons.visibility : Icons.visibility_off,
               color: Colors.grey,
             ),
           ),
@@ -35,6 +34,7 @@ eTextField({context, PlaceholderText}) {
     initState: (state) => LoginController,
     builder: (controller) => TextField(
       decoration: InputDecoration(
+          hintText: PlaceholderText,
           fillColor: myColors().textfieldFilled,
           border: OutlineInputBorder(
             borderRadius: BorderRadius.all(Radius.circular(10.0)),
