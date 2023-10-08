@@ -1,6 +1,3 @@
-import 'package:carpool/Bindings/loginBinding.dart';
-import 'package:carpool/Bindings/splashBinding.dart';
-
 import 'exportlinks.dart';
 
 void main() {
@@ -14,7 +11,7 @@ void main() {
       GetPage(
           name: '/driverSignup',
           page: () => const driverSignup(),
-          transition: Transition.zoom),
+          transition: Transition.fade),
       GetPage(
           name: '/rideSignup',
           page: () => const rideSignup(),
@@ -36,17 +33,15 @@ void main() {
           page: () => const FeedBackScreen(),
           transition: Transition.zoom),
       GetPage(
-          name: '/DriverPickup',
-          page: () => const DriverPickup(),
+          name: '/DriverHome',
+          page: () => const DriverPickupScreen(),
           transition: Transition.zoom),
       GetPage(
           name: '/settings',
           page: () => const SettingScreen(),
           transition: Transition.zoom),
       GetPage(
-          name: '/profile',
-          page: () => const Profile(),
-          transition: Transition.zoom),
+          name: '/profile', page: () => Profile(), transition: Transition.zoom),
     ],
   ));
 }

@@ -1,3 +1,5 @@
+// ignore_for_file: file_names
+
 import 'package:carpool/exportlinks.dart';
 
 class Splash extends StatelessWidget {

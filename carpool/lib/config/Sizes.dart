@@ -1,4 +1,6 @@
 // Access the screen dimensions using MediaQuery
+// ignore_for_file: file_names
+
 import 'package:carpool/exportlinks.dart';
 
 class MySizes {

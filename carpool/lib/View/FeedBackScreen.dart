@@ -1,3 +1,5 @@
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
 
 class FeedBackScreen extends StatelessWidget {
@@ -5,7 +7,7 @@ class FeedBackScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       body: SafeArea(child: Text("FeedBackScreen")),
     );
   }

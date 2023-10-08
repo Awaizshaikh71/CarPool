@@ -9,12 +9,24 @@ class MyFontStyle {
     return GoogleFonts.poppins(color: myColors().blackTitle, fontSize: 30);
   }
 
+  TextStyle getWhiteTitleFont() {
+    return GoogleFonts.poppins(color: myColors().whiteTitle, fontSize: 30);
+  }
+
+  TextStyle getGreenTitleFont() {
+    return GoogleFonts.poppins(color: myColors().bgColor, fontSize: 30);
+  }
+
   TextStyle getLoginTitleFont() {
     return GoogleFonts.poppins(color: myColors().blackTitle, fontSize: 30);
   }
 
   TextStyle smallTitleFont() {
-    return GoogleFonts.poppins(color: myColors().redTitle, fontSize: 15);
+    return GoogleFonts.poppins(
+        color: myColors().blackTitle,
+        fontSize: 15,
+        fontWeight: FontWeight.bold,
+        backgroundColor: myColors().offwhite);
   }
 
   TextStyle mediumTitleFont() {
