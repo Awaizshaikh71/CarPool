@@ -3,8 +3,8 @@
 import 'package:carpool/exportlinks.dart';
 
 class driverSignup extends StatelessWidget {
-  const driverSignup({super.key});
-
+  driverSignup({super.key});
+  final RxString selectedGender = ''.obs;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -110,6 +110,38 @@ class driverSignup extends StatelessWidget {
                   context: context,
                   PlaceholderText: "DD/MM/YYYY",
                   fieldType: "Dateofbirth"),
+            ),
+            SizedBox(
+              height: MySizes(context).screenHeight * 0.03,
+            ),
+            styledRadioTile('Male', selectedGender, context),
+            SizedBox(
+              height: MySizes(context).screenHeight * 0.03,
+            ),
+            styledRadioTile('Female', selectedGender, context),
+            SizedBox(
+              height: MySizes(context).screenHeight * 0.03,
+            ),
+            Container(
+              width: MySizes(context).screenWidth * 0.7,
+              height: MySizes(context).screenHeight * 0.05,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  cTitle(
+                      text: "Upload Driving License",
+                      context: context,
+                      size: 20.0),
+                  CircleAvatar(
+                    radius: 20,
+                    backgroundColor: myColors().bgGreen,
+                    child: Icon(
+                      Icons.upload_file,
+                      color: myColors().whiteTitle,
+                    ),
+                  )
+                ],
+              ),
             ),
             SizedBox(
               height: MySizes(context).screenHeight * 0.03,

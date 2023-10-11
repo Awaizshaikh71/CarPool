@@ -2,9 +2,11 @@
 
 import 'package:carpool/exportlinks.dart';
 
-class rideSignup extends StatelessWidget {
-  const rideSignup({super.key});
+import '../CustomWidgets/genderbtn.dart';
 
+class rideSignup extends StatelessWidget {
+  rideSignup({super.key});
+  final RxString selectedGender = ''.obs;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -102,6 +104,14 @@ class rideSignup extends StatelessWidget {
                   PlaceholderText: "DD/MM/YYYY",
                   fieldType: "Dateofbirth"),
             ),
+            SizedBox(
+              height: MySizes(context).screenHeight * 0.03,
+            ),
+            styledRadioTile('Male', selectedGender, context),
+            SizedBox(
+              height: MySizes(context).screenHeight * 0.03,
+            ),
+            styledRadioTile('Female', selectedGender, context),
             SizedBox(
               height: MySizes(context).screenHeight * 0.03,
             ),

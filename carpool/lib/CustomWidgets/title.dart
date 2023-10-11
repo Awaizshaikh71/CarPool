@@ -2,10 +2,10 @@
 
 import 'package:carpool/exportlinks.dart';
 
-Widget cTitle({text, context}) {
+Widget cTitle({text, context, size, color}) {
   return Text(
     text,
-    style: MyFontStyle(context).getTitleFont(),
+    style: MyFontStyle(context).getCustomTitleFont(size, color),
   );
 }
 
@@ -40,10 +40,16 @@ Widget smallTitle({text, context, type}) {
         : type != null
             ? Get.toNamed('/rideSignup')
             : null,
-    child: Center(
-      child: Text(
-        text,
-        style: MyFontStyle(context).smallTitleFont(),
+    child: Container(
+      width: MySizes(context).screenWidth * 0.4,
+      height: MySizes(context).screenHeight * 0.05,
+      decoration: BoxDecoration(
+          color: myColors().bgBlue, borderRadius: BorderRadius.circular(10)),
+      child: Center(
+        child: Text(
+          text,
+          style: MyFontStyle(context).smallTitleFont(),
+        ),
       ),
     ),
   );

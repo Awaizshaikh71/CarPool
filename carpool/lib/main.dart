@@ -10,16 +10,14 @@ void main() {
       GetPage(name: '/Login', page: () => Login(), bindings: [LoginBinding()]),
       GetPage(
           name: '/driverSignup',
-          page: () => const driverSignup(),
+          page: () => driverSignup(),
           transition: Transition.fade),
       GetPage(
           name: '/rideSignup',
-          page: () => const rideSignup(),
+          page: () => rideSignup(),
           transition: Transition.zoom),
       GetPage(
-          name: '/Home',
-          page: () => const HomeScreen(),
-          transition: Transition.zoom),
+          name: '/Home', page: () => HomeScreen(), transition: Transition.zoom),
       GetPage(
           name: '/BookRide',
           page: () => const preBookRideScreen(),

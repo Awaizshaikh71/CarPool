@@ -9,6 +9,12 @@ class MyFontStyle {
     return GoogleFonts.poppins(color: myColors().blackTitle, fontSize: 30);
   }
 
+  TextStyle getCustomTitleFont([size, color]) {
+    return GoogleFonts.poppins(
+        color: color == null ? myColors().blackTitle : color,
+        fontSize: size == null ? 30 : size);
+  }
+
   TextStyle getWhiteTitleFont() {
     return GoogleFonts.poppins(color: myColors().whiteTitle, fontSize: 30);
   }
@@ -23,10 +29,10 @@ class MyFontStyle {
 
   TextStyle smallTitleFont() {
     return GoogleFonts.poppins(
-        color: myColors().blackTitle,
-        fontSize: 15,
-        fontWeight: FontWeight.bold,
-        backgroundColor: myColors().offwhite);
+      color: myColors().whiteTitle,
+      fontSize: 15,
+      fontWeight: FontWeight.bold,
+    );
   }
 
   TextStyle mediumTitleFont() {

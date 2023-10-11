@@ -14,4 +14,5 @@ class myColors {
   Color textfieldFilled = const Color.fromARGB(255, 176, 243, 180);
   Color bgGreen = const Color.fromARGB(255, 4, 132, 70);
   Color offwhite = const Color.fromARGB(255, 208, 207, 207);
+  Color bgBlue = Color.fromARGB(255, 55, 131, 244);
 }

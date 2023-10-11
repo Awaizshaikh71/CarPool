@@ -14,7 +14,9 @@ class Login extends StatelessWidget {
           child: SingleChildScrollView(
         child: Column(
           children: [
-            Lottie.asset('assets/animation/joinus.json'),
+            SizedBox(
+                height: MySizes(context).screenHeight * 0.4,
+                child: Lottie.asset('assets/animation/joinus.json')),
             LoginTitle(context: context, text: "Welcome Back"),
             SizedBox(
               height: MySizes(context).screenHeight * 0.05,
@@ -24,8 +26,9 @@ class Login extends StatelessWidget {
               height: MySizes(context).screenHeight * 0.05,
               child: eTextField(context: context, PlaceholderText: "Email"),
             ),
+
             SizedBox(
-              height: MySizes(context).screenHeight * 0.05,
+              height: MySizes(context).screenHeight * 0.03,
             ),
             SizedBox(
                 width: MySizes(context).screenWidth * 0.8,
@@ -40,7 +43,18 @@ class Login extends StatelessWidget {
                       secureText: controller.secureText),
                 )),
             SizedBox(
-              height: MySizes(context).screenHeight * 0.05,
+              height: MySizes(context).screenHeight * 0.01,
+            ),
+
+            SizedBox(
+              width: MySizes(context).screenWidth * 0.7,
+              child: Align(
+                  alignment: Alignment.topRight,
+                  child: cTitle(
+                      text: "Forget Password", context: context, size: 12.0)),
+            ),
+            SizedBox(
+              height: MySizes(context).screenHeight * 0.03,
             ),
             SizedBox(
                 width: MySizes(context).screenWidth * 0.4,
@@ -52,12 +66,19 @@ class Login extends StatelessWidget {
             SizedBox(
               height: MySizes(context).screenHeight * 0.05,
             ),
-            smallTitle(context: context, text: "Signup as Driver", type: 'D'),
+            // smallTitle(context: context, text: "Signup as Driver", type: 'D'),
             SizedBox(
-              height: MySizes(context).screenHeight * 0.02,
+              width: MySizes(context).screenWidth * .9,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  smallTitle(
+                      context: context, text: "Signup as Driver", type: 'D'),
+                  smallTitle(
+                      context: context, text: "Signup as Ride", type: 'R'),
+                ],
+              ),
             ),
-            smallTitle(
-                context: context, text: "Signup as Passenger", type: 'R'),
           ],
         ),
       )),

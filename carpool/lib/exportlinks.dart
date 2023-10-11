@@ -28,3 +28,6 @@ export 'package:carpool/Bindings/loginBinding.dart';
 export 'package:carpool/Bindings/splashBinding.dart';
 export 'package:carousel_slider/carousel_slider.dart';
 export '../CustomWidgets/drawermenu.dart';
+export 'CustomWidgets/carousel.dart';
+export 'package:flutter_advanced_drawer/flutter_advanced_drawer.dart';
+export '../CustomWidgets/genderbtn.dart';
