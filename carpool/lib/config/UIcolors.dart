@@ -15,4 +15,7 @@ class myColors {
   Color bgGreen = const Color.fromARGB(255, 4, 132, 70);
   Color offwhite = const Color.fromARGB(255, 208, 207, 207);
   Color bgBlue = Color.fromARGB(255, 55, 131, 244);
+  Color tealColor = Colors.teal;
+  Color tealColor2 = Colors.tealAccent;
+  Color tealColor3 = const Color.fromARGB(255, 3, 96, 74);
 }

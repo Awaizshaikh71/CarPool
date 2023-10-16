@@ -22,6 +22,13 @@ Widget cDrawer(context) {
           ),
         ),
         ListTile(
+          title: Text('Home'),
+          onTap: () {
+            Get.toNamed('/Home');
+            // Add the functionality for Option 1 here
+          },
+        ),
+        ListTile(
           title: Text('Profile'),
           onTap: () {
             Get.toNamed('/profile');
@@ -29,7 +36,7 @@ Widget cDrawer(context) {
           },
         ),
         ListTile(
-          title: Text('Bookings'),
+          title: Text('Bookisngs'),
           onTap: () {
             // Add the functionality for Option 2 here
           },
@@ -43,9 +50,9 @@ Widget cDrawer(context) {
               onChanged: (onChanged) => print(onChanged)),
         ),
         ListTile(
-          title: Text('Setting'),
+          title: Text('Communities'),
           onTap: () {
-            Get.toNamed('/settings');
+            Get.toNamed('/CommunityScreen');
             // Add the functionality for Option 2 here
           },
         ),

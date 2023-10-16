@@ -38,8 +38,9 @@ class Profile extends StatelessWidget {
                       children: [
                         Padding(
                           padding: const EdgeInsets.only(left: 10, top: 10),
-                          child: Icon(
-                            Icons.arrow_back,
+                          child: IconButton(
+                            onPressed: () => Get.offAndToNamed('/Home'),
+                            icon: Icon(Icons.arrow_back),
                             color: myColors().blackTitle,
                           ),
                         ),
@@ -56,11 +57,14 @@ class Profile extends StatelessWidget {
                             ),
                           ),
                         ),
-                        Padding(
-                          padding: const EdgeInsets.only(left: 350, top: 10),
-                          child: Icon(
-                            Icons.more_vert,
-                            color: myColors().blackTitle,
+                        GestureDetector(
+                          onTap: () => Get.offAllNamed('/ChatRoomScreen'),
+                          child: Padding(
+                            padding: const EdgeInsets.only(left: 350, top: 12),
+                            child: Icon(
+                              Icons.message,
+                              color: myColors().blackTitle,
+                            ),
                           ),
                         ),
                       ],
@@ -96,10 +100,10 @@ class Profile extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           cTitle(text: "Mohid", context: context, size: 22.0),
-                          Icon(
-                            Icons.edit_square,
+                          IconButton(
+                            onPressed: () => Get.toNamed('/EditProfile'),
+                            icon: Icon(Icons.edit_square, size: 20),
                             color: myColors().redTitle,
-                            size: 20,
                           )
                         ],
                       ),
@@ -199,11 +203,14 @@ class Profile extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           cTitle(text: "Friends", context: context, size: 20.0),
-                          cTitle(
-                              text: "SeeAll",
-                              context: context,
-                              size: 15.0,
-                              color: myColors().redTitle),
+                          GestureDetector(
+                            onTap: () => Get.offAndToNamed('/FriendsList'),
+                            child: cTitle(
+                                text: "SeeAll",
+                                context: context,
+                                size: 15.0,
+                                color: myColors().redTitle),
+                          ),
                         ],
                       ),
                     ),

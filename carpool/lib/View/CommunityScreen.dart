@@ -1,11 +1,11 @@
-// ignore_for_file: file_names, camel_case_types
+// ignore_for_file: file_names
 
-import 'package:carpool/exportlinks.dart';
+import 'package:flutter/material.dart';
 
-import '../CustomWidgets/carousel.dart';
+import '../exportlinks.dart';
 
-class HomeScreen extends StatelessWidget {
-  HomeScreen({super.key});
+class CommunityScreen extends StatelessWidget {
+  CommunityScreen({super.key});
   final _advancedDrawerController = AdvancedDrawerController();
   @override
   Widget build(BuildContext context) {
@@ -42,7 +42,7 @@ class HomeScreen extends StatelessWidget {
       child: Scaffold(
         appBar: AppBar(
           backgroundColor: myColors().bgColor,
-          title: const Text('Hello, Mohid'),
+          title: const Text('Communities'),
           leading: IconButton(
             onPressed: _handleMenuButtonPressed,
             icon: ValueListenableBuilder<AdvancedDrawerValue>(
@@ -60,113 +60,46 @@ class HomeScreen extends StatelessWidget {
           ),
         ),
         body: SafeArea(
-            child: Stack(
-          children: [
-            Positioned(
-              top: 600.0,
-              left: 220.0,
-              child: Container(
-                height: MySizes(context).screenHeight * 0.2,
-                width: MySizes(context).screenWidth * 0.4,
-                decoration: BoxDecoration(
-                  image: DecorationImage(
-                      opacity: 0.2,
-                      image: AssetImage('assets/images/bg.png'),
-                      fit: BoxFit.contain),
+            child: Expanded(
+          child: GridView.builder(
+            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 2,
+            ),
+
+            itemBuilder: (context, index) => GestureDetector(
+              onTap: () => {
+                Get.toNamed('/Groupchatscreen'),
+                print("Get.toNamed('/Groupchatscreen')")
+              },
+              child: SizedBox(
+                height: MySizes(context).screenHeight * 0.1,
+                child: Card(
+                  color: myColors().tealColor,
+                  child: SizedBox(
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          "Group $index",
+                          style: TextStyle(
+                              color: myColors().whiteTitle, fontSize: 15),
+                        ),
+                        Text(
+                          "Total Members ${index += 10}",
+                          style: TextStyle(
+                              color: myColors().whiteTitle, fontSize: 15),
+                        ),
+                      ],
+                    ),
+                  ),
                 ),
               ),
             ),
-            Column(
-              children: [
-                SizedBox(
-                  height: MySizes(context).screenHeight * 0.05,
-                ),
-                carouselSlider(context),
-                SizedBox(
-                  height: MySizes(context).screenHeight * 0.1,
-                ),
-                GestureDetector(
-                  onTap: () => {Get.toNamed('/BookRide')},
-                  child: Container(
-                    decoration: BoxDecoration(
-                        color: myColors().bgWhite,
-                        border: Border.all(color: myColors().bgColor),
-                        boxShadow: [
-                          BoxShadow(
-                            color: Colors.lightGreen
-                                .withOpacity(0.5), // Light green shadow
-                            spreadRadius: 3,
-                            blurRadius: 7,
-                          ),
-                        ],
-                        borderRadius: BorderRadius.all(Radius.circular(10))),
-                    width: MySizes(context).screenWidth * 0.9,
-                    height: MySizes(context).screenHeight * 0.2,
-                    child: Row(
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.only(bottom: 50, left: 15),
-                          child: cbgColorTitle(
-                              text: "BOOK RIDE", context: context),
-                        ),
-                        SizedBox(
-                            height: MySizes(context).screenHeight * 0.4,
-                            width: MySizes(context).screenWidth * 0.4,
-                            child: Image(
-                                image: AssetImage('assets/images/car.png'))),
-                      ],
-                    ),
-                  ),
-                ),
-                SizedBox(
-                  height: MySizes(context).screenHeight * 0.05,
-                ),
-                GestureDetector(
-                  onTap: () => {Get.toNamed('/CommunityScreen')},
-                  child: Container(
-                    decoration: BoxDecoration(
-                        color: myColors().bgWhite,
-                        border: Border.all(color: myColors().bgColor),
-                        boxShadow: [
-                          BoxShadow(
-                            color: Colors.lightGreen
-                                .withOpacity(0.5), // Light green shadow
-                            spreadRadius: 3,
-                            blurRadius: 7,
-                          ),
-                        ],
-                        borderRadius: BorderRadius.all(Radius.circular(10))),
-                    width: MySizes(context).screenWidth * 0.9,
-                    height: MySizes(context).screenHeight * 0.2,
-                    child: Row(
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.only(bottom: 50, left: 15),
-                          child: cbgColorTitle(
-                              text: "Communities", context: context),
-                        ),
-                        SizedBox(
-                            height: MySizes(context).screenHeight * 0.3,
-                            width: MySizes(context).screenWidth * 0.3,
-                            child: Image(
-                                image: AssetImage('assets/images/group.jpeg'))),
-                      ],
-                    ),
-                  ),
-                ),
-                // Container(
-                //   height: MySizes(context).screenHeight * 0.2,
-                //   width: MySizes(context).screenWidth * 0.8,
-                //   decoration: BoxDecoration(
-                //       image: DecorationImage(
-                //           image: AssetImage('assets/images/car.png')),
-                //       // color: myColors().bgColor,
-                //       borderRadius: BorderRadius.all(Radius.circular(25.0))),
-                //   child: cTitle(text: "Book Ride", context: context),
-                // ),
-              ],
-            ),
-          ],
+            // separatorBuilder: (context, index) => SizedBox(
+            //   height: MySizes(context).screenHeight * 0.01,
+            // ),
+            itemCount: 10,
+          ),
         )),
       ),
       drawer: SafeArea(
@@ -192,6 +125,13 @@ class HomeScreen extends StatelessWidget {
                   child: Image.network(
                     'https://i.pinimg.com/236x/a8/46/22/a84622e7b2c392b1b46986273efb85e5.jpg',
                   ),
+                ),
+                ListTile(
+                  title: Text('Home'),
+                  onTap: () {
+                    Get.toNamed('/Home');
+                    // Add the functionality for Option 1 here
+                  },
                 ),
                 ListTile(
                   title: Text('Profile'),
