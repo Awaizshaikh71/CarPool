@@ -40,6 +40,8 @@ const profileRoutes = require('./routes/ProfileRoutes');
 const chatRoutes = require('./routes/chatRoutes');
 const GroupchatRoutes = require('./routes/GroupChatRoutes');
 const requesrrideRoutes = require('./routes/rideRequestRoutes');
+const promotionRoutes = require('./routes/PromotionRoutes');
+const groupRoutes = require('./routes/createGroupRoutes');
 
 
 
@@ -54,6 +56,9 @@ app.use('/api/chat', chatRoutes);
 app.use('/api/group',GroupchatRoutes);
 // Use the ridebook routes
 app.use('/api/ride',requesrrideRoutes);
+app.use('/api/offer',promotionRoutes);
+app.use('/api/group', groupRoutes);
+
 
 
 const PORT = process.env.PORT || 3000;
