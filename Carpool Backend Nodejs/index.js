@@ -53,13 +53,11 @@ app.use('/api/users', loginRoutes);
 // Use the profile route
 app.use('/api/profiles', profileRoutes);
 app.use('/api/chat', chatRoutes);
-app.use('/api/group',GroupchatRoutes);
+app.use('/api/groupchat', GroupchatRoutes); 
 // Use the ridebook routes
 app.use('/api/ride',requesrrideRoutes);
 app.use('/api/offer',promotionRoutes);
-app.use('/api/group', groupRoutes);
-
-
+app.use('/api/creategroup', groupRoutes); 
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {

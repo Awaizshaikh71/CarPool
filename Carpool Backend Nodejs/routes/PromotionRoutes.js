@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const PromotionOffer = require('../models/promotionOfferModel');
+const PromotionOffer = require('../models/PromotionOffer');
 
 // Create a new promotion offer
 router.post('/createoffer', async (req, res) => {

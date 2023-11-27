@@ -1,7 +1,7 @@
 // groupRoutes.js
 const express = require('express');
 const router = express.Router();
-const Group = require('../models/groupModel');
+const Group = require('../models/createGroupModel');
 
 // Create a new group
 router.post('/create', async (req, res) => {
@@ -38,4 +38,4 @@ router.get('/getall', async (req, res) => {
   }
 });
 
-// ... Add more endpoints for updating and managing groups
+module.exports = router;
