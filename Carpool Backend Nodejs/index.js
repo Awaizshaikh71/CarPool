@@ -1,10 +1,11 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const cors = require('cors');
 
 const app = express();
 
 // Use Express built-in JSON middleware for parsing JSON requests
-app.use(express.json());
+app.use(cors());
 
 // Connect to MongoDB
 mongoose.connect('mongodb+srv://iammohidshah:ATrFz29PKHxAmDjj@cluster0.9o7jx9f.mongodb.net/Carpooldb?retryWrites=true&w=majority', {
