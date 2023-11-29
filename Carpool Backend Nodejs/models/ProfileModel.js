@@ -6,6 +6,7 @@ const profileSchema = new mongoose.Schema({
   profileImage: String,
   name: String,
   location: String,
+  status:Boolean,
   bio: String,
   friendsList: [String],
   rides: Number,

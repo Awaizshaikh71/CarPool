@@ -12,6 +12,7 @@ const signupDriverSchema = new mongoose.Schema({
   dateOfBirth: String,
   gender: String,
   role: String,
+  status: Boolean,
   drivingLicenseImage: String,
 });
 

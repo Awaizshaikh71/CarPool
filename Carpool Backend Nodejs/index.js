@@ -5,6 +5,9 @@ const cors = require('cors');
 const app = express();
 
 // Use Express built-in JSON middleware for parsing JSON requests
+app.use(express.json()); 
+
+// Enable CORS for all routes
 app.use(cors());
 
 // Connect to MongoDB
@@ -12,7 +15,7 @@ mongoose.connect('mongodb+srv://iammohidshah:ATrFz29PKHxAmDjj@cluster0.9o7jx9f.m
   useNewUrlParser: true,
   useUnifiedTopology: true,
   // connectTimeoutMS: 10000, // 10 seconds
-  // socketTimeoutMS: 45000,  // 45 seconds
+  // socketTimeoutpMS: 45000,  // 45 seconds
 });
 
 const db = mongoose.connection;
@@ -33,7 +36,6 @@ const ProfileModel = require('./models/ProfileModel');
 const UserModel = require('./models/LoginModel');
 const GroupModel = require('./models/GroupChatModel');
 
-
 const driverRoutes = require('./routes/DriverRoutes');
 const passengerRoutes = require('./routes/PassengerRoutes');
 const loginRoutes = require('./routes/LoginRoutes');
@@ -43,9 +45,6 @@ const GroupchatRoutes = require('./routes/GroupChatRoutes');
 const requesrrideRoutes = require('./routes/rideRequestRoutes');
 const promotionRoutes = require('./routes/PromotionRoutes');
 const groupRoutes = require('./routes/createGroupRoutes');
-
-
-
 
 // Define API routes
 app.use('/api/driver', driverRoutes);

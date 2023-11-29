@@ -18,6 +18,7 @@ router.post('/register', async (req, res) => {
             friendsList: [], // Assuming it's an array
             rides: 0, // Initialize to 0 or another default value
             pickup: 0,
+            status:req.body.status,
             user: driver._id, // Associate the profile with the driver
           };
         const profile = new ProfileModel(profileData);
@@ -28,4 +29,13 @@ router.post('/register', async (req, res) => {
     }
 });
 
+
+router.get('/total', async (req, res) => {
+    try {
+        const totalDrivers = await SignupDriverModel.countDocuments();
+        res.status(200).json({ totalDrivers });
+    } catch (error) {
+        res.status(500).json({ error: 'Could not retrieve total driver count' });
+    }
+});
 module.exports = router;

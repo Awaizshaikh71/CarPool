@@ -12,6 +12,7 @@ const passengerSchema = new mongoose.Schema({
   dateOfBirth: String,
   role: String,
   gender: String,
+  status: Boolean
 });
 
 module.exports = mongoose.model('Passenger', passengerSchema);
