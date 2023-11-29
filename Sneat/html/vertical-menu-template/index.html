@@ -341,10 +341,13 @@
                   <div class="d-flex align-items-end row">
                     <div class="col-sm-7">
                       <div class="card-body">
-                        <h5 class="card-title text-primary">Welcome Mohid! 🎉 
-                        <button type="button" class="btn btn-primary btn-block" onclick="validateLogin()">Logout</button>
+                        <h5 class="card-title text-primary"  id="welcomeMessage">Welcome Mohid! 🎉 
                            </h5>
+                        <button type="button" class="btn btn-primary btn-block" onclick="validateLogin()">Logout</button>
+
                            <script>
+
+
   function togglePasswordVisibility() {
     var passwordInput = document.getElementById('password');
     var eyeIcon = document.getElementById('eyeIcon');
@@ -477,6 +480,20 @@
 
     <!-- Page JS -->
     <script src="../../assets/js/dashboards-analytics.js"></script>
+
+    <script>
+ 
+      // Retrieve data from local storage
+var userData = localStorage.getItem('userData');
+
+// Parse the JSON data
+var parsedUserData = JSON.parse(userData);
+
+// Now you can use parsedUserData as needed
+console.log(JSON.stringify(parsedUserData));
+document.getElementById('welcomeMessage').innerText = `Welcome ${parsedUserData.user.firstName}! 🎉`;
+
+    </script>
 
 </body>
 

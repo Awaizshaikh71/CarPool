@@ -358,8 +358,8 @@
                   <div class="col-lg-6 col-md-12 col-6 mb-4">
                     <div class="card">
                       <div class="card-body pb-0">
-                        <span class="d-block fw-medium mb-1">Total Book Rides</span>
-                        <h3 class="card-title mb-1">0</h3>
+                        <span class="d-block fw-medium mb-1">Total Passenger</span>
+                        <h3 class="card-title mb-1" id="passengerdata">0</h3>
                         <br>
                       </div>
 
@@ -369,7 +369,7 @@
                 </div>
               </div>
 
-              <div class="col-12 col-md-8 col-lg-4 order-3 order-md-2">
+              <!-- <div class="col-12 col-md-8 col-lg-4 order-3 order-md-2">
                 <div class="row">
                   <div class="col-6 mb-4">
                     <div class="card">
@@ -391,7 +391,7 @@
 
                       </div>
                     </div>
-                  </div>
+                  </div> -->
               
                 
                   <!-- add table here -->
@@ -423,6 +423,7 @@
                       </label>
                   </td>
               </tr>
+              
               <!-- Repeat the above block for each row -->
               </tbody>
           </table>
@@ -462,7 +463,20 @@
 
     <!-- Page JS -->
     <script src="../../assets/js/dashboards-analytics.js"></script>
+<script>
+     async function fetchpassengerCount() {
+  try {
+    var p = await fetch("http://localhost:3000/api/passenger/total");
+    var data = await p.json();
+    console.log(JSON.stringify(data));
+    document.getElementById('passengerdata').innerText = `${JSON.parse(data.totalpassenger)}`;
+  } catch (error) {
+    console.error('Error fetching passenger data:', error);
+  }
+}
+fetchpassengerCount();
 
+</script>
 </body>
 
 

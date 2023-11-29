@@ -358,8 +358,8 @@
                   <div class="col-lg-6 col-md-12 col-6 mb-4">
                     <div class="card">
                       <div class="card-body pb-0">
-                        <span class="d-block fw-medium mb-1">Total Pick Rides</span>
-                        <h3 class="card-title mb-1">0</h3>
+                        <span class="d-block fw-medium mb-1" >Total Drivers</span>
+                        <h3 class="card-title mb-1" id="driverdata">0</h3>
                         <br>
                       </div>
 
@@ -462,7 +462,24 @@
 
     <!-- Page JS -->
     <script src="../../assets/js/dashboards-analytics.js"></script>
+<script>
+    
 
+async function fetchdriverCount() {
+  try {
+    var p = await fetch("http://localhost:3000/api/driver/total");
+    var data = await p.json();
+    console.log(JSON.stringify(data));
+    document.getElementById('driverdata').innerText = `${JSON.parse(data.totalDrivers)}`;
+
+  } catch (error) {
+    console.error('Error fetching driver data:', error);
+  }
+}
+
+fetchdriverCount();
+
+</script>
 </body>
 
 
